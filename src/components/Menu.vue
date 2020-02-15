@@ -15,7 +15,7 @@ export default {
 		return {
 			navbars: [
 				{ names: 'Main', router: '/' },
-				{ names: 'Tasks', router: '/Tasks' },
+				{ names: 'Users', router: '/Users' },
 				{ names: 'About', router: '/About' }
 			]
 		}

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Main from '@/pages/Main'
-import Tasks from '@/pages/Tasks'
+import Users from '@/pages/Users'
 import About from '@/pages/About'
 
 Vue.use(VueRouter)
@@ -13,9 +13,9 @@ const routes = [
 		component: Main
 	},
 	{
-		path: '/Tasks',
-		name: 'Tasks',
-		component: Tasks
+		path: '/Users',
+		name: 'Users',
+		component: Users
 	},
 	{
 		path: '/About',

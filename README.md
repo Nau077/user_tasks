@@ -1,23 +1,21 @@
-# Vue simple todo task (с хранением vuex)
+# Vue-Firebase users task
 
-# Доступно демо на https://nau077.github.io/vue-simple-todo-task/
-
-## Установка
+## Install
 ```
 npm install
 ```
 
-### Запуск development
+### Run
 ```
 npm run serve
 ```
 
-### Запуск линтера
+### Run lint
 ```
 npm run lint
 ```
 
-### Запуск prettier
+### Run prettier
 ```
 npm run lint --fix
 ```

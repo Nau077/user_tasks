@@ -1,4 +1,4 @@
-import { mapGetters, mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 
 export default {
 	data() {
@@ -8,13 +8,10 @@ export default {
 		}
 	},
 	computed: {
-		...mapGetters('todo', ['computedTodo']),
-		todos() {
-			return this.computedTodo
-		}
+		...mapState('users', ['users'])
 	},
 	methods: {
-		...mapActions('todo', ['EditTodo', 'viewTodo']),
+		...mapActions('users', ['EditUser', 'viewTodo']),
 		closeDescPopup() {
 			this.isPopup = false
 		},
@@ -24,16 +21,12 @@ export default {
 		saveEdit(value) {
 			this.isEdit = value
 		},
-		viewTodo(id) {
-			const todo = this.todos.find(item => id == item.id)
-			this.currentDescription = todo.description
-			this.isPopup = true
-		},
-		editTodo(id) {
-			const todo = this.todos.find(item => id == item.id)
-			this.edit.editTitle = todo.title
-			this.id = todo.id
-			this.edit.editDescription = todo.description
+		editUser(fbKey) {
+			const user = this.users.find(user => fbKey == user.fbKey)
+			this.edit.editFirstName = user.firstName
+			this.edit.editLastName = user.lastName
+			this.edit.userName = user.userName
+			this.edit.fbKey = user.fbKey
 			this.isEdit = true
 		}
 	}

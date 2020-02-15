@@ -2,70 +2,38 @@
 section.main
 	.container
 		transition(name="slide-fade")
-			.wrapper-main-btn(v-if='!isShownTodoFunc')
-				button.main-btn.title-btn(@click="viewTasks()") Добавить задание
-		AddTask(
-			:isShown='isShownTodoFunc'
+			.wrapper-main-btn(v-if='!isShownAddForm')
+				button.main-btn.title-btn(@click="viewTasks()") Add user
+		AddUser(
+			@closeAdd='closeAdd()'
+			:isShown='isShownAddForm'
 		)
 			template(v-slot:title)
-				div 
-					h1 Добавить задачу:
-		.wrapper-view-btn
-			button.main-btn.title-btn(@click="viewEditTodo()" v-if='!canChange') Редактировать
-		TaskList(
-			:canChange='canChange'
-			@editTodo='editTodo'
-			@viewTodo='viewTodo'
-		)
-		PopupDescription(
-			:isPopup='isPopup'
-			:description='currentDescription'
-			@closeDescPopup='closeDescPopup'
-		)
-		transition(name="slide-fade")
-			div(v-if='isEdit')
-				PopupEdit(
-				:id='id'
-				:edit='edit'
-				@saveEdit='saveEdit'
-				@closeEdit='closeEdit'
-				)
+				h2 Add user:
+		UserList
 </template>
 
 <script>
-import popupsView from '@/mixins/popupsView'
-import PopupEdit from '@/components/custom/PopupEdit'
-import PopupDescription from '@/components/custom/PopupDescription'
-import AddTask from '@/components/page-modules/AddTask'
-import TaskList from '@/components/page-modules/TaskList'
+import AddUser from '@/components/page-modules/AddUser'
+import UserList from '@/components/page-modules/UserList'
 
 export default {
 	name: 'Main',
-	mixins: [popupsView],
 	components: {
-		PopupEdit,
-		PopupDescription,
-		AddTask,
-		TaskList
+		AddUser,
+		UserList
 	},
 	data() {
 		return {
-			id: NaN,
-			canChange: false,
-			isShownTodoFunc: false,
-			currentDescription: '',
-			edit: {
-				editTitle: '',
-				editDescription: ''
-			}
+			isShownAddForm: false
 		}
 	},
 	methods: {
 		viewTasks() {
-			this.isShownTodoFunc = true
+			this.isShownAddForm = true
 		},
-		viewEditTodo() {
-			this.canChange = true
+		closeAdd() {
+			this.isShownAddForm = false
 		}
 	}
 }
