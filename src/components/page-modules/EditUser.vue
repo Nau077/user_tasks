@@ -14,7 +14,7 @@
 			transition(name="slide-fade")
 				.tasks-btns
 					button.main-btn(@click="closeEdit()") Close
-					button.main-btn(
+					button.main-btn.edit-btn(
 						@click="saveEdit()"
 						:disabled="$v.firstName.$invalid || $v.lastName.$invalid"
 						) Save
@@ -35,7 +35,7 @@ import { mapState, mapActions } from 'vuex'
 import { required, minLength, maxLength } from 'vuelidate/lib/validators'
 
 export default {
-	name: 'UserEdit',
+	name: 'EditUser',
 	props: {
 		fbKey: String,
 		isEdit: Boolean

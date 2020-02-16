@@ -5,7 +5,7 @@
 				:filteredArray.sync="usersFiltered"
 				:arrayToFilter="users"
 			)
-				template(v-slot:title)
+				template(v-slot:title="")
 					label Search users (start type last name or first name)		
 			transition-group(name="slide-fade")
 				.task-list(v-for="user in usersFiltered" :key="user.fbKey")
@@ -50,10 +50,7 @@ export default {
 		...mapState('users', ['users'])
 	},
 	methods: {
-		...mapActions('users', ['editUser', 'showEditUser', 'hideEditUser']),
-		editUser(fbKey) {
-			this.$emit('editUser', fbKey)
-		},
+		...mapActions('users', ['showEditUser', 'hideEditUser']),
 		showEdit(fbKey) {
 			this.showEditUser(fbKey)
 		},

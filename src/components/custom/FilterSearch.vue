@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
 export default {
 	name: 'FilterSearch',
 	props: {
@@ -30,6 +29,7 @@ export default {
 	computed: {
 		filteredArray() {
 			if (!this.search.length) return this.arrayToFilter
+
 			return this.arrayToFilter.filter(item => {
 				const fullItem = item.firstName + item.lastName
 				return fullItem.toLowerCase().includes(this.search.toLowerCase())
