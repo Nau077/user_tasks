@@ -51,7 +51,7 @@ function m() {
 }
 
 describe('test user-add component', () => {
-	it('check when all fields are empty', () => {
+	it('checks when all fields are empty', () => {
 		const w = m()
 
 		const firstNameInput = w.findAll('input').at(0)
@@ -64,7 +64,7 @@ describe('test user-add component', () => {
 		expect(w.vm.$v.lastName.$invalid).toBe(true)
 	})
 
-	it('check when all fields have insufficient length', () => {
+	it('checks when all fields have insufficient length', () => {
 		const w = m()
 
 		const firstNameInput = w.findAll('input').at(0)
@@ -77,7 +77,7 @@ describe('test user-add component', () => {
 		expect(w.vm.$v.lastName.$invalid).toBe(true)
 	})
 
-	it('check when all is ok', () => {
+	it('checks when all is ok', () => {
 		const w = m()
 
 		const firstNameInput = w.findAll('input').at(0)
@@ -90,7 +90,7 @@ describe('test user-add component', () => {
 		expect(w.vm.$v.lastName.$invalid).toBe(false)
 	})
 
-	it('check disable button when fields are not invalid', () => {
+	it('checks disable button when fields are not invalid', () => {
 		const w = m()
 
 		const firstNameInput = w.findAll('input').at(0)

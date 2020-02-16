@@ -20,10 +20,10 @@
 							p Username: 
 							span {{user.userName}}
 						transition(name="slide-fade")
-							.tasks-btns
+							.tasks-btns(v-if='canShowEdit')
 								button.main-btn(@click="showEdit(user.fbKey)") Edit user
 					transition(name="slide-fade")
-						.user-edit(v-if="user.isEdit")
+						.user-edit(v-if="user.isEdit && canShowEdit")
 							EditUser(
 								:fbKey='user.fbKey'
 								@closeEdit='closeEdit'
@@ -40,6 +40,12 @@ export default {
 	components: {
 		FilterSearch,
 		EditUser
+	},
+	props: {
+		canShowEdit: {
+			type: Boolean,
+			default: true
+		}
 	},
 	data() {
 		return {
@@ -86,6 +92,14 @@ export default {
 	.tasks-btns {
 		display: flex;
 		flex-direction: column;
+	}
+}
+@media (min-width: 600px) {
+	.task {
+		max-width: 500px;
+		.main-user-block {
+			max-width: 500px;
+		}
 	}
 }
 </style>

@@ -51,6 +51,9 @@ function m() {
 			FilterSearch,
 			EditUser
 		},
+		propsData: {
+			canShowEdit: true
+		},
 		store: new Vuex.Store({
 			modules: {
 				users
@@ -60,7 +63,7 @@ function m() {
 }
 
 describe('test userList component', () => {
-	it('check call of vuex action that change isEdit field after emit', async () => {
+	it('checks call of vuex action that change isEdit field after emit', async () => {
 		const w = m()
 
 		await localVue.nextTick()
@@ -71,7 +74,7 @@ describe('test userList component', () => {
 			'-M09HJlW3D_6_fn2WPqv'
 		)
 	})
-	it('check users text', async () => {
+	it('checks users text', async () => {
 		const w = m()
 		await localVue.nextTick()
 
@@ -89,7 +92,7 @@ describe('test userList component', () => {
 		expect(checkUsersText(5)).toEqual('isDB')
 		expect(checkUsersText(6)).toEqual('data')
 	})
-	it('check show edit working', async () => {
+	it('checks show edit working', async () => {
 		const w = m()
 		await localVue.nextTick()
 		const editBtn = w.findAll('.main-btn').at(2)

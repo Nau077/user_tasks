@@ -99,7 +99,7 @@ export default {
 	justify-content: space-between;
 	flex-direction: column;
 	background-color: white;
-	max-width: 500px;
+	max-width: 340px;
 	margin: 20px auto 20px auto;
 	padding: 10px;
 	background: #f1f1f1;
@@ -126,6 +126,22 @@ export default {
 	.error {
 		color: rgb(196, 29, 29);
 		margin: 15px auto 15px auto;
+	}
+}
+@media (max-width: 600px) {
+	.tasks {
+		max-width: 270px;
+	}
+	.main-user-block {
+		flex-direction: column;
+		align-items: center;
+		div {
+			margin-bottom: 7px;
+			text-align: center !important;
+			p {
+				margin-bottom: 5px;
+			}
+		}
 	}
 }
 </style>

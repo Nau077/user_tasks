@@ -2,7 +2,7 @@
 header
 	.container
 		li(v-for="(item, i) in navbars")
-			router-link(:to="{path:item.router}") {{item.names}}
+			router-link(:to="{path:item.router}" class='router-t') {{item.names}}
 </template>
 
 <script>

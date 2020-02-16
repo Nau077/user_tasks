@@ -61,7 +61,7 @@ describe('test user-add component', () => {
 		expect(w.vm.filteredArray).toEqual(filteredArray)
 	})
 
-	it('check when we use filter, when type 3 letters of name', async () => {
+	it('check when we use filter, when type 3 letters of name', () => {
 		const w = m()
 		const filterInput = w.find('input')
 		filterInput.setValue('Mich')
@@ -72,7 +72,7 @@ describe('test user-add component', () => {
 		expect(w.vm.filteredArray).toEqual(filteredArray)
 	})
 
-	it('check when we use filter, when type 3 letters of name', async () => {
+	it('check when we use filter, when type 3 letters of name', () => {
 		const w = m()
 		const filterInput = w.find('input')
 		filterInput.setValue('Jek')

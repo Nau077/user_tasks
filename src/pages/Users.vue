@@ -1,6 +1,6 @@
 <template lang="pug">
 	section
-		UserList
+		UserList(:canShowEdit='isShowEditBlock')
 </template>
 
 <script>
@@ -12,7 +12,9 @@ export default {
 		UserList
 	},
 	data() {
-		return {}
+		return {
+			isShowEditBlock: false
+		}
 	}
 }
 </script>

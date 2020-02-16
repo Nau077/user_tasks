@@ -8,7 +8,7 @@ section.main
 			@closeAdd='closeAdd()'
 			:isShown='isShownAddForm'
 		)
-			template(v-slot:title)
+			template(v-slot:title="")
 				h2 Add user:
 		UserList
 </template>
@@ -40,7 +40,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped scoped lang="scss">
 .main {
 	max-width: 1100px;
 	width: 100%;
